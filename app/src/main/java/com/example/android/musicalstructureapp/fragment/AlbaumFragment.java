@@ -1,17 +1,20 @@
 package com.example.android.musicalstructureapp.fragment;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android.musicalstructureapp.R;
+import com.example.android.musicalstructureapp.ViewerActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -43,6 +46,14 @@ public class AlbaumFragment extends Fragment {
         adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item, albaumList);
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ViewerActivity.class);
+                intent.putExtra("fragment", "Albaum");
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
