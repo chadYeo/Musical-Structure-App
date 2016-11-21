@@ -27,11 +27,17 @@ public class ViewerActivity extends AppCompatActivity {
         ListAdapter listAdapter;
         ListView listView = (ListView)findViewById(R.id.listView);
 
+        TextView textView;
+        textView = (TextView) findViewById(R.id.textview_viewer);
+
         String fragment = getIntent().getStringExtra("fragment");
 
         if (fragment.equals("Playlist")) {
             String[] items = {"Song 1", "Song 2", "Song 3", "Song 4"};
             ArrayList<String> playlists = new ArrayList<>();
+
+            textView.setText("This layout out will show list of songs in Playlist");
+
             playlists.addAll(Arrays.asList(items));
 
             listAdapter = new ArrayAdapter<>(ViewerActivity.this, R.layout.list_item, playlists);
@@ -41,6 +47,9 @@ public class ViewerActivity extends AppCompatActivity {
         if (fragment.equals("Artist")) {
             String[] items = {"Alpha", "Beta", "Charles", "Delta"};
             ArrayList<String> artists = new ArrayList<>();
+
+            textView.setText("This layout out will show list of artist names in Albaum");
+
             artists.addAll(Arrays.asList(items));
 
             listAdapter = new ArrayAdapter<>(ViewerActivity.this, R.layout.list_item, artists);
@@ -50,6 +59,9 @@ public class ViewerActivity extends AppCompatActivity {
         if (fragment.equals("Albaum")) {
             String[] items = {"Artist Alpha", "Artist Beta", "Artist Charles"};
             ArrayList<String> albaums = new ArrayList<>();
+
+            textView.setText("This layout out will show list of albaum");
+
             albaums.addAll(Arrays.asList(items));
 
             listAdapter = new ArrayAdapter<>(ViewerActivity.this, R.layout.list_item, albaums);
