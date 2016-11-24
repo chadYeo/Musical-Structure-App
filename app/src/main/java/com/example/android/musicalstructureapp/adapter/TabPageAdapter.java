@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.android.musicalstructureapp.fragment.AlbaumFragment;
 import com.example.android.musicalstructureapp.fragment.ArtistFragment;
-import com.example.android.musicalstructureapp.fragment.PlaylistFragment;
+import com.example.android.musicalstructureapp.fragment.PlaylistActivityFragment;
 import com.example.android.musicalstructureapp.fragment.SongFragment;
 
 /**
@@ -25,7 +25,7 @@ public class TabPageAdapter extends FragmentStatePagerAdapter{
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new PlaylistFragment();
+                return new PlaylistActivityFragment();
             case 1:
                 return new ArtistFragment();
             case 2:

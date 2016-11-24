@@ -17,8 +17,7 @@
         </activity>
         <activity
             android:name=".ViewerActivity"
-            android:label="@string/title_activity_viewer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
